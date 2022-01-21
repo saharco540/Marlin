@@ -1280,7 +1280,7 @@
 #endif
 
 #if HAS_BED_PROBE && EITHER(HAS_LCD_MENU, HAS_TFT_LVGL_UI)
-  #define PROBE_OFFSET_WIZARD       // Add a Probe Z Offset calibration option to the LCD menu
+  //#define PROBE_OFFSET_WIZARD       // Add a Probe Z Offset calibration option to the LCD menu
   #if ENABLED(PROBE_OFFSET_WIZARD)
     /**
      * Enable to init the Probe Z-Offset when starting the Wizard.
@@ -1314,7 +1314,7 @@
 
   // Build Volume Wizard - Guided build volume adjustment
   #if ENABLED(VERT_CUSTOM)
-    #define BUILD_VOLUME_WIZARD
+    //#define BUILD_VOLUME_WIZARD //for testing of new feature in development
   #endif
   
   // Include a page of printer information in the LCD Main Menu
@@ -1607,7 +1607,7 @@
    * Use 'M503 C' to write the settings out to the SD Card as 'mc.zip'.
    * See docs/ConfigEmbedding.md for details on how to use 'mc-apply.py'.
    */
-  #define CONFIGURATION_EMBEDDING
+  //#define CONFIGURATION_EMBEDDING
   #if ENABLED (CONFIGURATION_EMBEDDING)
     #define FORCE_CONFIG_EMBED
     #define NO_CONFIGURATION_EMBEDDING_WARNING
