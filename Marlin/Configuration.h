@@ -22,7 +22,7 @@
 #pragma once
 
 #define CONFIG_EXAMPLES_DIR "Geeetech/A20T"
-//#define VERT_CUSTOM //enable vert custom settings
+//#define VERT_CUSTOM // enables my custom mods for my A20T
 
 /**
  * Configuration.h
