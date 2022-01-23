@@ -21,7 +21,7 @@
  */
 #pragma once
 
-#define CONFIG_EXAMPLES_DIR "Geeetech/A20T"
+//#define CONFIG_EXAMPLES_DIR "Geeetech/A20T"
 //#define VERT_CUSTOM // enables my custom mods for my A20T
 
 /**
