@@ -25,7 +25,7 @@
 //
 #include "../../inc/MarlinConfigPre.h"
 
-#if HAS_LCD_MENU
+#if HAS_MARLINUI_MENU
 
 #include "menu_item.h"
 #include "../../module/planner.h"
