@@ -1600,8 +1600,10 @@
    * See docs/ConfigEmbedding.md for details on how to use 'mc-apply.py'.
    */
   //#define CONFIGURATION_EMBEDDING
-  //#define FORCE_CONFIG_EMBED
-
+  #if ENABLED(CONFIGURATION_EMBEDDING)
+    #define FORCE_CONFIG_EMBED
+  #endif
+  
   // Add an optimized binary file transfer mode, initiated with 'M28 B1'
   //#define BINARY_FILE_TRANSFER
 
