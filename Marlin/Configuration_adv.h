@@ -1599,8 +1599,11 @@
    * Use 'M503 C' to write the settings out to the SD Card as 'mc.zip'.
    * See docs/ConfigEmbedding.md for details on how to use 'mc-apply.py'.
    */
-  #define CONFIGURATION_EMBEDDING
-  #define FORCE_CONFIG_EMBED
+  //#define CONFIGURATION_EMBEDDING
+  #if ENABLED (CONFIGURATION_EMBEDDING)
+    #define FORCE_CONFIG_EMBED
+    #define NO_CONFIGURATION_EMBEDDING_WARNING
+  #endif
 
   // Add an optimized binary file transfer mode, initiated with 'M28 B1'
   //#define BINARY_FILE_TRANSFER
@@ -1935,7 +1938,7 @@
  *
  * Warning: Does not respect endstops!
  */
-#define BABYSTEPPING
+//#define BABYSTEPPING
 #if ENABLED(BABYSTEPPING)
   //#define INTEGRATED_BABYSTEPPING         // EXPERIMENTAL integration of babystepping into the Stepper ISR
   //#define BABYSTEP_WITHOUT_HOMING
