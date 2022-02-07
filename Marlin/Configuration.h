@@ -100,6 +100,7 @@
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
   #define MOTHERBOARD BOARD_GT2560_V3
+  //#define MOTHERBOARD BOARD_GT2560_V4
 #endif
 
 /**
