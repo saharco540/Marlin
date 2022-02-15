@@ -1071,7 +1071,7 @@
  * Use G29 repeatedly, adjusting the Z height at each point with movement commands
  * or (with LCD_BED_LEVELING) the LCD controller.
  */
-//#define PROBE_MANUALLY
+//#define PROBE_MANUALLY  //Stock Without Probe
 
 /**
  * A Fix-Mounted Probe either doesn't deploy or needs manual deployment.
