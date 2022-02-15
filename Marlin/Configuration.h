@@ -1700,7 +1700,7 @@
   #define UBL_HILBERT_CURVE           // Use Hilbert distribution for less travel when probing multiple points
   #define UBL_MESH_EDIT_MOVES_Z       // Sophisticated users prefer no movement of nozzle
   #define UBL_SAVE_ACTIVE_ON_M500     // Save the currently active mesh in the current slot on M500
-  #define UBL_Z_RAISE_WHEN_OFF_MESH 5 // When the nozzle is off the mesh, this value is used as the Z-Height correction value.
+  #define UBL_Z_RAISE_WHEN_OFF_MESH 0 // When the nozzle is off the mesh, this value is used as the Z-Height correction value.
   #define UBL_MESH_WIZARD             // Run several commands in a row to get a complete mesh
 
 #elif ENABLED(MESH_BED_LEVELING)
