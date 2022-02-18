@@ -21,7 +21,8 @@
  */
 #pragma once
 
-#define CONFIG_EXAMPLES_DIR "Geeetech/A20M"
+//#define CONFIG_EXAMPLES_DIR "Geeetech/A20M"
+//#define CONVERT_TO_CYCLOPS //Disable mixing (8 virtual extruders) & use single nozzle control system (2 physical extruders)
 
 /**
  * Configuration.h
@@ -195,13 +196,19 @@
 
 // This defines the number of extruders
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
-#define EXTRUDERS 1
+#if DISABLED (CONVERT_TO_CYCLOPS)
+  #define EXTRUDERS 1
+#else 
+  #define EXTRUDERS 2
+#endif
 
 // Generally expected filament diameter (1.75, 2.85, 3.0, ...). Used for Volumetric, Filament Width Sensor, etc.
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
 
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
-//#define SINGLENOZZLE
+#if ENABLED (CONVERT_TO_CYCLOPS)
+  #define SINGLENOZZLE
+#endif
 
 // Save and restore temperature and fan speed on tool-change.
 // Set standby for the unselected tool with M104/106/109 T...
@@ -338,6 +345,7 @@
  *   - This implementation supports up to two mixing extruders.
  *   - Enable DIRECT_MIXING_IN_G1 for M165 and mixing in G1 (from Pia Taubert's reference implementation).
  */
+#if DISABLED (CONVERT_TO_CYCLOPS)
 #define MIXING_EXTRUDER
 #if ENABLED(MIXING_EXTRUDER)
   #define MIXING_STEPPERS 2        // Number of steppers in your mixing extruder
@@ -348,6 +356,7 @@
   #if ENABLED(GRADIENT_MIX)
     #define GRADIENT_VTOOL         // Add M166 T to use a V-tool index as a Gradient alias
   #endif
+#endif
 #endif
 
 // Offset of the extruders (uncomment if using more than one and relying on firmware to position when changing).
