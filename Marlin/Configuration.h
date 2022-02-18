@@ -23,7 +23,7 @@
 
 //#define CONFIG_EXAMPLES_DIR "Geeetech/A20T"
 //#define VERT_CUSTOM // enables my custom mods for my A20T
-//#define CONVERT_TO_CYCLOPS //Disable mixing (8 virtual extruders) & use single nozzle control system (2 physical extruders)
+//#define CONVERT_TO_TRICYCLOPS //Disable mixing (8 virtual extruders) & use single nozzle control system (3 physical extruders)
 
 /**
  * Configuration.h
@@ -197,7 +197,7 @@
 
 // This defines the number of extruders
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
-#if DISABLED (CONVERT_TO_CYCLOPS)
+#if DISABLED (CONVERT_TO_TRICYCLOPS)
   #define EXTRUDERS 1
 #else
   #define EXTRUDERS 3
@@ -207,7 +207,7 @@
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
 
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
-#if ENABLED (CONVERT_TO_CYCLOPS)
+#if ENABLED (CONVERT_TO_TRICYCLOPS)
   #define SINGLENOZZLE
 #endif
 
@@ -346,7 +346,7 @@
  *   - This implementation supports up to two mixing extruders.
  *   - Enable DIRECT_MIXING_IN_G1 for M165 and mixing in G1 (from Pia Taubert's reference implementation).
  */
-#if DISABLED (CONVERT_TO_CYCLOPS)
+#if DISABLED (CONVERT_TO_TRICYCLOPS)
   #define MIXING_EXTRUDER
 #if ENABLED(MIXING_EXTRUDER)
   #define MIXING_STEPPERS 3        // Number of steppers in your mixing extruder
