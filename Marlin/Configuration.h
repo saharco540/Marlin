@@ -1349,7 +1349,7 @@
 // @section extruder
 
 #define DISABLE_E false             // Disable the extruder when not stepping
-#define DISABLE_INACTIVE_EXTRUDER   // Keep only the active extruder enabled
+//#define DISABLE_INACTIVE_EXTRUDER   // Keep only the active extruder enabled
 
 // @section machine
 
@@ -1403,14 +1403,14 @@
 
 // The size of the printable area
 #define X_BED_SIZE 300
-#define Y_BED_SIZE 300
+#define Y_BED_SIZE 297
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS -26
 #define Y_MIN_POS -6
 #define Z_MIN_POS 0
-#define X_MAX_POS 300
-#define Y_MAX_POS 297
+#define X_MAX_POS X_BED_SIZE
+#define Y_MAX_POS Y_BED_SIZE
 #define Z_MAX_POS 370
 //#define I_MIN_POS 0
 //#define I_MAX_POS 50
