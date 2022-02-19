@@ -2490,6 +2490,9 @@
 // (For CR-10 owners who want to replace the Melzi Creality board but retain the display)
 //
 #define CR10_STOCKDISPLAY
+#define ST7920_DELAY_1 DELAY_NS(150)
+#define ST7920_DELAY_2 DELAY_NS(150)
+#define ST7920_DELAY_3 DELAY_NS(150)
 
 //
 // Ender-2 OEM display, a variant of the MKS_MINI_12864
@@ -2505,9 +2508,6 @@
 //
 //#define ANET_FULL_GRAPHICS_LCD
 //#define ANET_FULL_GRAPHICS_LCD_ALT_WIRING
-#define ST7920_DELAY_1 DELAY_NS(150)
-#define ST7920_DELAY_2 DELAY_NS(150)
-#define ST7920_DELAY_3 DELAY_NS(150)
 
 //
 // AZSMZ 12864 LCD with SD
