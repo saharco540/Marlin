@@ -943,7 +943,7 @@
  *                                      X, Y, Z [, I [, J [, K]]], E0 [, E1[, E2...]]
  */
 // E steps example: steps per revolution s=200, microstepping m=16, effective gear diameter d=10.95: sm/(πd) = 93.02
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 93.02 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 800, 130 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -1358,9 +1358,9 @@
 // @section machine
 
 // Invert the stepper direction. Change (or reverse the motor connector) if an axis goes the wrong way.
-#define INVERT_X_DIR false
-#define INVERT_Y_DIR false
-#define INVERT_Z_DIR false
+#define INVERT_X_DIR true
+#define INVERT_Y_DIR true
+#define INVERT_Z_DIR true
 //#define INVERT_I_DIR false
 //#define INVERT_J_DIR false
 //#define INVERT_K_DIR false
