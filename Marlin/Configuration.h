@@ -2013,7 +2013,9 @@
       #define LEVEL_CORNERS_VERIFY_RAISED   // After adjustment triggers the probe, re-probe to verify
       //#define LEVEL_CORNERS_AUDIO_FEEDBACK
     #endif
+   #endif
   #endif
+ #endif
 
   /**
    * Corner Leveling Order
