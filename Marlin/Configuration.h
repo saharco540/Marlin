@@ -23,6 +23,7 @@
 
 //#define CONFIG_EXAMPLES_DIR "Geeetech/A10M"
 //#define CONVERT_TO_CYCLOPS //Disable mixing (8 virtual extruders) & use single nozzle control system (2 physical extruders)
+//#define CHIMERA // 2 in 2 out mod
 
 /**
  * Configuration.h
@@ -174,7 +175,7 @@
 //#define V_DRIVER_TYPE  A4988
 //#define W_DRIVER_TYPE  A4988
 #define E0_DRIVER_TYPE A4988
-//#define E1_DRIVER_TYPE A4988
+#define E1_DRIVER_TYPE A4988
 //#define E2_DRIVER_TYPE A4988
 //#define E3_DRIVER_TYPE A4988
 //#define E4_DRIVER_TYPE A4988
@@ -228,7 +229,7 @@
 
 // This defines the number of extruders
 // :[0, 1, 2, 3, 4, 5, 6, 7, 8]
-#if DISABLED (CONVERT_TO_CYCLOPS)
+#if DISABLED (CONVERT_TO_CYCLOPS) && DISABLED (CHIMERA)
   #define EXTRUDERS 1
 #else
   #define EXTRUDERS 2
@@ -238,7 +239,7 @@
 #define DEFAULT_NOMINAL_FILAMENT_DIA 1.75
 
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
-#if ENABLED (CONVERT_TO_CYCLOPS)
+#if ENABLED (CONVERT_TO_CYCLOPS) 
   #define SINGLENOZZLE
 #endif
 
@@ -377,7 +378,7 @@
  *   - This implementation supports up to two mixing extruders.
  *   - Enable DIRECT_MIXING_IN_G1 for M165 and mixing in G1 (from Pia Taubert's reference implementation).
  */
-#if DISABLED (CONVERT_TO_CYCLOPS)
+#if DISABLED (CONVERT_TO_CYCLOPS) && DISABLED (CHIMERA)
 #define MIXING_EXTRUDER
 #if ENABLED(MIXING_EXTRUDER)
   #define MIXING_STEPPERS 2        // Number of steppers in your mixing extruder
@@ -541,7 +542,9 @@
  *
  */
 #define TEMP_SENSOR_0 5
-#define TEMP_SENSOR_1 0
+#if ENABLED (CHIMERA)
+  #define TEMP_SENSOR_1 5
+#endif
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_4 0
