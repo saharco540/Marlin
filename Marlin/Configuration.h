@@ -1495,7 +1495,7 @@
  *     O-- FRONT --+
  */
 #if ENABLED (VERT_CUSTOM)
-  #define NOZZLE_TO_PROBE_OFFSET { -38, 5, -2}
+  #define NOZZLE_TO_PROBE_OFFSET { -38, 5, -2 }
 #else
   #define NOZZLE_TO_PROBE_OFFSET { -38, 5, 0 }
 #endif
