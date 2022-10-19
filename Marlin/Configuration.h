@@ -22,7 +22,7 @@
 #pragma once
 
 //#define CONFIG_EXAMPLES_DIR "Geeetech/A10"
-#define VERT_CUSTOM // enables my custom mods for my A10
+//#define VERT_CUSTOM // enables my custom mods for my A10
 
 /**
  * Configuration.h
@@ -1172,7 +1172,7 @@
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
 #if ENABLED(VERT_CUSTOM)
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 405, 93 } // calibrated with a 20mm cube for my printer.
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 81, 81, 405, 93 } // perfectly calibrated for my printer.
 #else
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 93 }
 #endif
