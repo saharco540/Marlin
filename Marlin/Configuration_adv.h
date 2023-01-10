@@ -1308,7 +1308,7 @@
   // Add a mute option to the LCD menu
   #define SOUND_MENU_ITEM
 
-#endif // HAS_MARLINUI_MENU
+// HAS_MARLINUI_MENU
 
 #if ANY(HAS_DISPLAY, DWIN_LCD_PROUI, DWIN_CREALITY_LCD_JYERSUI)
   //#define SOUND_MENU_ITEM   // Add a mute option to the LCD menu

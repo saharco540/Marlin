@@ -67,14 +67,14 @@
     #error "Serial Port 1 RX IO pins conflict with another pin on the board."
   #endif
 #endif
-#if SERIAL_IN_USE(2)
-  #if CHECK_SERIAL_PIN(TX,2)
-    #error "Serial Port 2 TX IO pins conflict with another pin on the board."
-  #endif
-  #if CHECK_SERIAL_PIN(RX,2)
-    #error "Serial Port 2 RX IO pins conflict with another pin on the board."
-  #endif
-#endif
+//#if SERIAL_IN_USE(2)
+  //#if CHECK_SERIAL_PIN(TX,2)
+    //#error "Serial Port 2 TX IO pins conflict with another pin on the board."
+  //#endif
+ // #if CHECK_SERIAL_PIN(RX,2)
+    //#error "Serial Port 2 RX IO pins conflict with another pin on the board."
+  //#endif
+//#endif
 #if SERIAL_IN_USE(3)
   #if CHECK_SERIAL_PIN(TX,3)
     #error "Serial Port 3 TX IO pins conflict with another pin on the board."
