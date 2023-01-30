@@ -90,6 +90,7 @@
 
 // Choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
+  // The only differance from v3 to v4 is the displayed version number in marlin.
   #define MOTHERBOARD BOARD_GT2560_V3
   //#define MOTHERBOARD BOARD_GT2560_V4
 #endif
