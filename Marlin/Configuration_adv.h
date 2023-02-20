@@ -1451,6 +1451,9 @@
   // Show the E position (filament used) during printing
   //#define LCD_SHOW_E_TOTAL
 
+  // Display a negative temperature instead of "err"
+  //#define SHOW_TEMPERATURE_BELOW_ZERO
+
   /**
    * LED Control Menu
    * Add LED Control to the LCD menu
@@ -2088,7 +2091,7 @@
 
   #if ENABLED(BABYSTEP_ZPROBE_OFFSET)
     //#define BABYSTEP_HOTEND_Z_OFFSET      // For multiple hotends, babystep relative Z offsets
-    //#define BABYSTEP_ZPROBE_GFX_OVERLAY   // Enable graphical overlay on Z-offset editor
+    //#define BABYSTEP_GFX_OVERLAY          // Enable graphical overlay on Z-offset editor
   #endif
 #endif
 
