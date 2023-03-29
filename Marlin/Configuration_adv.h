@@ -439,7 +439,7 @@
    * 5. Enable PID_FAN_SCALING_ALTERNATIVE_DEFINITION and enter the two identified Kf-values in
    *    PID_FAN_SCALING_AT_FULL_SPEED and PID_FAN_SCALING_AT_MIN_SPEED. Enter the minimum speed in PID_FAN_SCALING_MIN_SPEED
    */
-  //#define PID_FAN_SCALING
+  #define PID_FAN_SCALING
   #if ENABLED(PID_FAN_SCALING)
     //#define PID_FAN_SCALING_ALTERNATIVE_DEFINITION
     #if ENABLED(PID_FAN_SCALING_ALTERNATIVE_DEFINITION)
@@ -671,7 +671,7 @@
  * Multiple extruders can be assigned to the same pin in which case
  * the fan will turn on when any selected extruder is above the threshold.
  */
-#define E0_AUTO_FAN_PIN -1
+#define E0_AUTO_FAN_PIN PB5
 #define E1_AUTO_FAN_PIN -1
 #define E2_AUTO_FAN_PIN -1
 #define E3_AUTO_FAN_PIN -1
