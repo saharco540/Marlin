@@ -60,6 +60,7 @@
  */
 void GcodeSuite::M106() {
   const uint8_t pfan = parser.byteval('P', _ALT_P);
+  process_subcommands_now(FPSTR("M106P1S255")); // 2ed part cooling fan
   if (pfan >= _CNT_P) return;
   #if REDUNDANT_PART_COOLING_FAN
     if (pfan == REDUNDANT_PART_COOLING_FAN) return;
