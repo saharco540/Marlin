@@ -95,7 +95,7 @@ void GcodeSuite::M106() {
   if (TERN0(DUAL_X_CARRIAGE, idex_is_duplicating()))  // pfan == 0 when duplicating
     thermalManager.set_fan_speed(1 - pfan, speed);
 
-process_subcommands_now(FPSTR("M106P1S255")); // part cooling fan2 on    
+FPSTR("M106P1S255"); // part cooling fan2 on    
 }
 
 /**
@@ -115,7 +115,7 @@ void GcodeSuite::M107() {
 
   TERN_(LASER_SYNCHRONOUS_M106_M107, planner.buffer_sync_block(BLOCK_BIT_SYNC_FANS));
 
-  process_subcommands_now(FPSTR("M106P1S0")); // 2ed part cooling fan off
+  FPSTR("M107P1"); // 2ed part cooling fan off
 }
 
 #endif // HAS_FAN
