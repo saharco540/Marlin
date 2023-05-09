@@ -90,6 +90,7 @@ void GcodeSuite::M106() {
   // Set speed, with constraint
   thermalManager.set_fan_speed(pfan, speed);
   thermalManager.set_fan_speed(pfan + 1, speed);
+  thermalManager.set_fan_speed(pfan + 2, speed);
 
   TERN_(LASER_SYNCHRONOUS_M106_M107, planner.buffer_sync_block(BLOCK_BIT_SYNC_FANS));
 
@@ -109,6 +110,7 @@ void GcodeSuite::M107() {
 
   thermalManager.set_fan_speed(pfan, 0);
   thermalManager.set_fan_speed(pfan + 1, 0);
+  thermalManager.set_fan_speed(pfan + 2, 0);
 
   if (TERN0(DUAL_X_CARRIAGE, idex_is_duplicating()))  // pfan == 0 when duplicating
     thermalManager.set_fan_speed(1 - pfan, 0);
