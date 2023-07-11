@@ -63,6 +63,8 @@
 #define STRING_CONFIG_H_AUTHOR "(Vert)" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
+//#define FULL_HIGH_TEMP  // enabled full 295C heater limits
+
 // @section machine
 
 // Choose the name from boards.h that matches your setup
@@ -627,6 +629,18 @@
 // Above this temperature the heater will be switched off.
 // This can protect components from overheating, but NOT from shorts and failures.
 // (Use MINTEMP for thermistor short/failure protection.)
+#if DISABLED(FULL_HIGH_TEMP)
+#define HEATER_0_MAXTEMP 250
+#define HEATER_1_MAXTEMP 250
+#define HEATER_2_MAXTEMP 250
+#define HEATER_3_MAXTEMP 250
+#define HEATER_4_MAXTEMP 250
+#define HEATER_5_MAXTEMP 250
+#define HEATER_6_MAXTEMP 250
+#define HEATER_7_MAXTEMP 250
+#define BED_MAXTEMP      125
+#define CHAMBER_MAXTEMP  60
+#elif ENABLED(FULL_HIGH_TEMP)
 #define HEATER_0_MAXTEMP 295
 #define HEATER_1_MAXTEMP 295
 #define HEATER_2_MAXTEMP 295
@@ -637,6 +651,7 @@
 #define HEATER_7_MAXTEMP 295
 #define BED_MAXTEMP      125
 #define CHAMBER_MAXTEMP  60
+#endif
 
 /**
  * Thermal Overshoot
