@@ -1221,7 +1221,7 @@
  * total number of extruders, the last value applies to the rest.
  */
 #if ENABLED(CHIMERA)
-  #define DISTINCT_E_FACTORS
+  // #define DISTINCT_E_FACTORS
 #endif
 
 /**
@@ -1229,7 +1229,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 430 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 455 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1772,8 +1772,8 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 230
-#define Y_BED_SIZE 230
+#define X_BED_SIZE 235
+#define Y_BED_SIZE 235
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
 #define X_MIN_POS -10
@@ -2044,12 +2044,12 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-  //#define G26_MESH_VALIDATION
+  #define G26_MESH_VALIDATION
   #if ENABLED(G26_MESH_VALIDATION)
-    #define MESH_TEST_NOZZLE_SIZE   1.8    // (mm) Diameter of primary nozzle.
+    #define MESH_TEST_NOZZLE_SIZE   0.4    // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT  0.2    // (mm) Default layer height for G26.
-    #define MESH_TEST_HOTEND_TEMP   250    // (°C) Default nozzle temperature for G26.
-    #define MESH_TEST_BED_TEMP       70    // (°C) Default bed temperature for G26.
+    #define MESH_TEST_HOTEND_TEMP   200    // (°C) Default nozzle temperature for G26.
+    #define MESH_TEST_BED_TEMP       60    // (°C) Default bed temperature for G26.
     #define G26_XY_FEEDRATE          30    // (mm/s) Feedrate for G26 XY moves.
     #define G26_XY_FEEDRATE_TRAVEL   60    // (mm/s) Feedrate for G26 XY travel moves.
     #define G26_RETRACT_MULTIPLIER  6.0    // G26 Q (retraction) used by default between mesh test elements.
@@ -2093,7 +2093,7 @@
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
   #define MESH_INSET 0              // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 5      // Don't use more than 15 points per axis, implementation limited.
+  #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   #define UBL_HILBERT_CURVE       // Use Hilbert distribution for less travel when probing multiple points
@@ -2112,8 +2112,8 @@
    */
   #define AVOID_OBSTACLES
   #if ENABLED(AVOID_OBSTACLES)
-    #define CLIP_W  23  // Bed clip width, should be padded a few mm over its physical size
-    #define CLIP_H  14  // Bed clip height, should be padded a few mm over its physical size
+    #define CLIP_W  15  // Bed clip width, should be padded a few mm over its physical size
+    #define CLIP_H  9  // Bed clip height, should be padded a few mm over its physical size
 
     // Obstacle Rectangles defined as { X1, Y1, X2, Y2 }
     #define OBSTACLE1 { (X_BED_SIZE) / 4     - (CLIP_W) / 2,                       0, (X_BED_SIZE) / 4     + (CLIP_W) / 2, CLIP_H }
