@@ -1651,7 +1651,7 @@
 
 // Enable the M48 repeatability test to test probe accuracy
 #if ANY(BLTOUCH, FIX_MOUNTED_PROBE)
-  //#define Z_MIN_PROBE_REPEATABILITY_TEST //diagnostic tool to check probe functions
+  #define Z_MIN_PROBE_REPEATABILITY_TEST //diagnostic tool to check probe functions
 #endif
 
 // Before deploy/stow pause for user confirmation
@@ -1772,11 +1772,11 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 235
-#define Y_BED_SIZE 235
+#define X_BED_SIZE 225
+#define Y_BED_SIZE 225
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -10
+#define X_MIN_POS -5
 #define Y_MIN_POS -5
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
@@ -1980,7 +1980,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-//#define AUTO_BED_LEVELING_BILINEAR
+// #define AUTO_BED_LEVELING_BILINEAR
 #define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -1989,8 +1989,8 @@
  * these options to restore the prior leveling state or to always enable
  * leveling immediately after G28.
  */
-//#define RESTORE_LEVELING_AFTER_G28
-#define ENABLE_LEVELING_AFTER_G28
+#define RESTORE_LEVELING_AFTER_G28
+// #define ENABLE_LEVELING_AFTER_G28
 
 /**
  * Auto-leveling needs preheating
@@ -2048,11 +2048,11 @@
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE   0.4    // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT  0.2    // (mm) Default layer height for G26.
-    #define MESH_TEST_HOTEND_TEMP   200    // (°C) Default nozzle temperature for G26.
+    #define MESH_TEST_HOTEND_TEMP   185    // (°C) Default nozzle temperature for G26.
     #define MESH_TEST_BED_TEMP       60    // (°C) Default bed temperature for G26.
-    #define G26_XY_FEEDRATE          30    // (mm/s) Feedrate for G26 XY moves.
+    #define G26_XY_FEEDRATE          25    // (mm/s) Feedrate for G26 XY moves.
     #define G26_XY_FEEDRATE_TRAVEL   60    // (mm/s) Feedrate for G26 XY travel moves.
-    #define G26_RETRACT_MULTIPLIER  6.0    // G26 Q (retraction) used by default between mesh test elements.
+    #define G26_RETRACT_MULTIPLIER  4    // G26 Q (retraction) used by default between mesh test elements.
   #endif
 
 #endif
@@ -2092,8 +2092,8 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 0              // Set Mesh bounds as an inset region of the bed
-  #define GRID_MAX_POINTS_X 10      // Don't use more than 15 points per axis, implementation limited.
+  #define MESH_INSET 35              // Set Mesh bounds as an inset region of the bed
+  #define GRID_MAX_POINTS_X 7      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   #define UBL_HILBERT_CURVE       // Use Hilbert distribution for less travel when probing multiple points
