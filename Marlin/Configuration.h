@@ -1578,7 +1578,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -38, 0, -0.6}
+#define NOZZLE_TO_PROBE_OFFSET { -38, 5, 0}
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1810,11 +1810,11 @@
 // @section geometry
 
 // The size of the printable area
-#define X_BED_SIZE 225
-#define Y_BED_SIZE 225
+#define X_BED_SIZE 230
+#define Y_BED_SIZE 230
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS -5
+#define X_MIN_POS -10
 #define Y_MIN_POS -5
 #define Z_MIN_POS 0
 #define X_MAX_POS X_BED_SIZE
@@ -2018,7 +2018,7 @@
  */
 //#define AUTO_BED_LEVELING_3POINT
 //#define AUTO_BED_LEVELING_LINEAR
-// #define AUTO_BED_LEVELING_BILINEAR
+//#define AUTO_BED_LEVELING_BILINEAR
 #define AUTO_BED_LEVELING_UBL
 //#define MESH_BED_LEVELING
 
@@ -2136,7 +2136,7 @@
   #define UBL_TILT_ON_MESH_POINTS         // Use nearest mesh points with G29 J for better Z reference
   #define UBL_TILT_ON_MESH_POINTS_3POINT  // Use nearest mesh points with G29 J0 (3-point)
 
-  #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
+  // #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
   #define UBL_SAVE_ACTIVE_ON_M500   // Save the currently active mesh in the current slot on M500
   #define UBL_Z_RAISE_WHEN_OFF_MESH 0 // When the nozzle is off the mesh, this value is used
                                           // as the Z-Height correction value.
