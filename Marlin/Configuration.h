@@ -65,7 +65,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(Vert)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "pmiracle-vert" // Who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 // @section machine
@@ -1235,7 +1235,7 @@
  * total number of extruders, the last value applies to the rest.
  */
 #if ENABLED(CHIMERA)
-  // #define DISTINCT_E_FACTORS
+  #define DISTINCT_E_FACTORS
 #endif
 
 /**
@@ -1243,7 +1243,7 @@
  * Override with M92
  *                                      X, Y, Z [, I [, J [, K...]]], E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 455 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 425 }
 
 /**
  * Default Max Feed Rate (linear=mm/s, rotational=°/s)
@@ -1578,7 +1578,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -38, 5, 0}
+#define NOZZLE_TO_PROBE_OFFSET { -38, 5, -2.2 }
 
 // Enable and set to use a specific tool for probing. Disable to allow any tool.
 #define PROBING_TOOL 0
@@ -1674,7 +1674,7 @@
 
 // Enable the M48 repeatability test to test probe accuracy
 #if ANY(BLTOUCH, FIX_MOUNTED_PROBE)
-  #define Z_MIN_PROBE_REPEATABILITY_TEST //diagnostic tool to check probe functions
+  // #define Z_MIN_PROBE_REPEATABILITY_TEST //diagnostic tool to check probe functions
 #endif
 
 // Before deploy/stow pause for user confirmation
@@ -2127,7 +2127,7 @@
 
   //#define MESH_EDIT_GFX_OVERLAY   // Display a graphics overlay while editing the mesh
 
-  #define MESH_INSET 35              // Set Mesh bounds as an inset region of the bed
+  #define MESH_INSET 12              // Set Mesh bounds as an inset region of the bed
   #define GRID_MAX_POINTS_X 7      // Don't use more than 15 points per axis, implementation limited.
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
@@ -2136,7 +2136,7 @@
   #define UBL_TILT_ON_MESH_POINTS         // Use nearest mesh points with G29 J for better Z reference
   #define UBL_TILT_ON_MESH_POINTS_3POINT  // Use nearest mesh points with G29 J0 (3-point)
 
-  // #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
+  #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
   #define UBL_SAVE_ACTIVE_ON_M500   // Save the currently active mesh in the current slot on M500
   #define UBL_Z_RAISE_WHEN_OFF_MESH 0 // When the nozzle is off the mesh, this value is used
                                           // as the Z-Height correction value.
@@ -2145,7 +2145,7 @@
   /**
    * Probing not allowed within the position of an obstacle.
    */
-  #define AVOID_OBSTACLES
+  // #define AVOID_OBSTACLES
   #if ENABLED(AVOID_OBSTACLES)
     #define CLIP_W  15  // Bed clip width, should be padded a few mm over its physical size
     #define CLIP_H  9  // Bed clip height, should be padded a few mm over its physical size
