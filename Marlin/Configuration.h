@@ -20,6 +20,7 @@
  *
  */
 #pragma once
+#define DISTINCT_E_FACTORS
 
 //#define CONFIG_EXAMPLES_DIR "Geeetech/A10M"
 //#define CONVERT_TO_CYCLOPS //Disable mixing (8 virtual extruders) & use single nozzle control system (2 physical extruders)
